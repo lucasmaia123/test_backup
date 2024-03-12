@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% if msg %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endif %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User page</title>
+    </head>
+    <body>
+        <h1>Welcome {{ user }}</h1>
+        <button type="button" onclick="check_posts()">Check posts</button>
+        <button type="button" onclick="logout()">Log out</button>
+        <script>
+            function check_posts(){
+                document.location.href = "{% url 'myapp:list_posts' %}"
+            }
+            function logout(){
+                document.location.href = "{% url 'myapp:logout' %}"
+            }
+        </script>
+    </body>
+</html>

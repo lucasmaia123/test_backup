@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Check post</title>
+    </head>
+    <body>
+        <a href="{% url 'myapp:list_posts' %}" style="position: absolute; right: 50px; top: 5px;">Go back</a>
+        <h1>Post from {{user}}</h1>
+        Description: {{desc}}<br>
+        Date: {{date}}<br>
+        Message: {{load}}<br>
+        <button type="button" onclick="location.href = 'http://localhost/delete_post/{{id}}'">Delete</button>
+    </body>
+</html>

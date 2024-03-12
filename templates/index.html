@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% if msg %}
+<script>
+    alert('{{msg}}');
+</script>
+{% endif %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Index</title>
+    </head>
+    <body>
+        <form method="post" action="/login/">
+            {% csrf_token %}
+            Login:<br>
+            <input name="login" id="login"><br>
+            Password:<br>
+            <input type="password" name="password" id="password"><br>
+            <button type="submit">Log in</button>
+            <button type="button" onclick="signup()">Sign up</button>
+        </form>
+        <script>
+            function signup(){
+                document.location.href = "{% url 'myapp:signup' %}"
+            }
+        </script>
+    </body>
+</html>

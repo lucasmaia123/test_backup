@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sign up</title>
+    </head>
+    <body>
+        <a href="{ url 'myapp:homepage' }" style="position: absolute; right: 50px; top: 5px;">Go back</a>
+        <form method="post" action="/signup/">
+            {% csrf_token %}
+            Login:<br>
+            <input type="text" name="user"><br>
+            Password:<br>
+            <input type="password" name="password"><br>
+            <button type="submit">Create</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Posts listing</title>
+    </head>
+    <body>
+        <h1>{{user}} posts</h1>
+        {% for id, date, desc in posts %}
+        <a href="http://localhost/check_post/{{id}}">Date: {{date}} Description: {{desc}}</a><br>
+        {% endfor %}
+        <button type="button" onclick="new_post()">New post</button>
+        <script>
+            function new_post(){
+                document.location.href = "{% url 'myapp:make_post' %}"
+            }
+        </script>
+    </body>
+</html>
